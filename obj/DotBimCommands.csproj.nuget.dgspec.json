@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj": {}
+    "C:\\Users\\archi\\source\\repos\\dotbimRH\\DotBimCommands.csproj": {}
   },
   "projects": {
-    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj": {
+    "C:\\Users\\archi\\source\\repos\\dotbimRH\\DotBimCommands.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj",
+        "projectUniqueName": "C:\\Users\\archi\\source\\repos\\dotbimRH\\DotBimCommands.csproj",
         "projectName": "DotBimCommands",
-        "projectPath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj",
+        "projectPath": "C:\\Users\\archi\\source\\repos\\dotbimRH\\DotBimCommands.csproj",
         "packagesPath": "C:\\Users\\archi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\obj\\",
+        "outputPath": "C:\\Users\\archi\\source\\repos\\dotbimRH\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\archi\\AppData\\Roaming\\NuGet\\NuGet.Config",

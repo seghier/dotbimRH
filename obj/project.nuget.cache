@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DF/uCDDGLnG3o0I1i09G86lvfNv+kdDGvCfoPdgRgthXxrHHACgwZL9TrFlJ7JYgvHZiqNYWeVMWnbWrAS/m+Q==",
+  "dgSpecHash": "Xl0SPkp5d35k3rD8rT1VJI9aYbEdzvn2YbZQs8Tv6Xs7j99tyAxChVHlur4c3Dmwau7YoLrNG9D972tNiI2+Lg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj",
+  "projectFilePath": "C:\\Users\\archi\\source\\repos\\dotbimRH\\DotBimCommands.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\archi\\.nuget\\packages\\rhinocommon\\7.13.21348.13001\\rhinocommon.7.13.21348.13001.nupkg.sha512"
   ],
