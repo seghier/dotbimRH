@@ -1,11 +1,11 @@
-﻿using DotBimCommands.Interfaces;
+﻿using import_DOTBIM.Interfaces;
 using Rhino.Geometry;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using Mesh = Rhino.Geometry.Mesh;
 
-namespace DotBimCommands.Interfaces
+namespace import_DOTBIM.Interfaces
 {
     public interface IElementSetConvertable
     {
@@ -13,7 +13,7 @@ namespace DotBimCommands.Interfaces
     }
 }
 
-namespace DotBimCommands
+namespace import_DOTBIM
 {
     public class BimElementSet : IElementSetConvertable
     {

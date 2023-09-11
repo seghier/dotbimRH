@@ -1,5 +1,5 @@
 ﻿using dotbim;
-using DotBimCommands.Interfaces;
+using import_DOTBIM.Interfaces;
 using Rhino.Geometry;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Linq;
 using Mesh = Rhino.Geometry.Mesh;
 
 
-namespace DotBimCommands
+namespace import_DOTBIM
 {
     public static class Tools
     {

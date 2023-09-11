@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <Version>1.0</Version>
+    <Title>DotBimCommands</Title>
+    <Description>Rhino plugin to import BIM file
+Wojciech Radaczyński - developer of Dotbim
+https://github.com/paireks/dotbim</Description>
+    <TargetExt>.rhp</TargetExt>
+    <Authors>Seghier Mohamed Abdelaziz</Authors>
+    <Company />
+    <Copyright>Wojciech Radaczyński - developer of Dotbim</Copyright>
+    <PackageProjectUrl>https://github.com/paireks/dotbim</PackageProjectUrl>
+    <PackageIcon>214624938-0e201999-7d74-4fc1-b975-03e20a961e21.png</PackageIcon>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="EmbeddedResources\**\*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\Downloads\214624938-0e201999-7d74-4fc1-b975-03e20a961e21.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="RhinoCommon" Version="7.13.21348.13001" IncludeAssets="compile;build" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="dotbim">
+      <HintPath>..\..\..\Documents\GitHub\rh-developer-samples\rhinocommon\cs\bin\dotbim.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+  </ItemGroup>
+  
+</Project>

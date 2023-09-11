@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj": {}
+    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\import_DOTBIM.csproj": {}
   },
   "projects": {
-    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj": {
+    "C:\\Users\\archi\\source\\repos\\DotBimCommands\\import_DOTBIM.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj",
-        "projectName": "DotBimCommands",
-        "projectPath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\DotBimCommands.csproj",
+        "projectUniqueName": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\import_DOTBIM.csproj",
+        "projectName": "import_DOTBIM",
+        "projectPath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\import_DOTBIM.csproj",
         "packagesPath": "C:\\Users\\archi\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\archi\\source\\repos\\DotBimCommands\\obj\\",
         "projectStyle": "PackageReference",

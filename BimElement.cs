@@ -1,10 +1,10 @@
-﻿using DotBimCommands.Interfaces;
+﻿using import_DOTBIM.Interfaces;
 using Rhino.Geometry;
 using System.Collections.Generic;
 using System.Drawing;
 using Mesh = Rhino.Geometry.Mesh;
 
-namespace DotBimCommands
+namespace import_DOTBIM
 {
 
     public class BimElement : IElementSetConvertable
