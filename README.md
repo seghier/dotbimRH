@@ -4,7 +4,9 @@ Dotbim created by: Wojciech Radaczyński, https://github.com/paireks
 
 https://github.com/paireks/dotbim
 
-File >> Import >> DotBim (*.bim)
-Or:
-Use the command: ImportDOTBIM
+To imprort dotbim file:
+
+1- File >> Import >> DotBim (*.bim)
+
+2- Use the command: ImportDOTBIM
 
