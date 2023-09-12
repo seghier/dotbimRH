@@ -20,6 +20,10 @@ https://github.com/paireks/dotbim</Description>
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="DotBimCommands.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Include="..\..\..\Downloads\214624938-0e201999-7d74-4fc1-b975-03e20a961e21.png">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>

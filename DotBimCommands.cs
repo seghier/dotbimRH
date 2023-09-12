@@ -46,11 +46,6 @@ namespace import_DOTBIM
                 // Use the dotbim library to open and process the BIM file
                 var model = dotbim.File.Read(filename);
                 var rhinoGeometries = Tools.ConvertBimMeshesAndElementsIntoRhinoMeshes(model.Meshes, model.Elements);
-                var fileinfo = model.Info;
-                //string author = fileinfo.Keys.FirstOrDefault();
-                //string name = fileinfo.Values.FirstOrDefault();
-                var filekeys = fileinfo.Keys.ToList();
-                var filevalues = fileinfo.Values.ToList();
 
                 foreach (var geo in rhinoGeometries)
                 {
@@ -61,49 +56,21 @@ namespace import_DOTBIM
                         var attributes = new Rhino.DocObjects.ObjectAttributes();
 
                         string mguid = model.Elements[id].Guid;
-                        string mmshid = model.Elements[id].MeshId.ToString();
-                        string mrot = Math.Round(model.Elements[id].Rotation.Qw,3).ToString() + ", " +
-                                        Math.Round(model.Elements[id].Rotation.Qx,3).ToString() + ", " +
-                                        Math.Round(model.Elements[id].Rotation.Qy,3).ToString() + ", " +
-                                        Math.Round(model.Elements[id].Rotation.Qz,3).ToString();
-                        string mvect = Math.Round(model.Elements[id].Vector.X,3).ToString() + ", " +
-                                       Math.Round(model.Elements[id].Vector.Y,3).ToString() + ", " +
-                                       Math.Round(model.Elements[id].Vector.Z,3).ToString();
                         string mtype = model.Elements[id].Type;
-                        string mcolor = model.Elements[id].Color.A.ToString() + ", " +
-                                        model.Elements[id].Color.R.ToString() + ", " +
-                                        model.Elements[id].Color.G.ToString() + ", " +
-                                        model.Elements[id].Color.B.ToString();
-
-                        // assign atributes to the meshes
-                        // to use in Rhino
-                        foreach (var fkey in filekeys)
-                        {
-                            int fid = filekeys.IndexOf(fkey);
-                            attributes.SetUserString("File Info: " + fkey, filevalues[fid]);
-                            geo.SetUserString("File Info: " + fkey, filevalues[fid]);
-                        }
 
                         attributes.SetUserString("Guid", mguid);
-                        attributes.SetUserString("Mesh ID", mmshid);
-                        attributes.SetUserString("Rotation", mrot);
-                        attributes.SetUserString("Vector", mvect);
                         attributes.SetUserString("Type", mtype);
-                        attributes.SetUserString("Color", mcolor);
+
                         attributes.ObjectId = Guid.Parse(mguid);
                         foreach (var kvp in minfo)
                         {
-                            attributes.SetUserString("Info: " + kvp.Key, kvp.Value);
-                            geo.SetUserString("Info: " + kvp.Key, kvp.Value);
+                            attributes.SetUserString(kvp.Key, kvp.Value);
+                            geo.SetUserString(kvp.Key, kvp.Value);
                         }
 
                         // to use in Grasshopper
                         geo.SetUserString("Guid", mguid);
-                        geo.SetUserString("Mesh ID", mmshid);
-                        geo.SetUserString("Rotation", mrot);
-                        geo.SetUserString("Vector", mvect);
                         geo.SetUserString("Type", mtype);
-                        geo.SetUserString("Color", mcolor);
                         geo.Compact();
 
                         doc.Objects.Add(geo, attributes);

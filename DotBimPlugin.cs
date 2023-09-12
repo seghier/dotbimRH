@@ -64,6 +64,7 @@ namespace import_DOTBIM
                         var attributes = new Rhino.DocObjects.ObjectAttributes();
 
                         string mguid = model.Elements[id].Guid;
+
                         string mmshid = model.Elements[id].MeshId.ToString();
                         string mrot = Math.Round(model.Elements[id].Rotation.Qw, 3).ToString() + ", " +
                                         Math.Round(model.Elements[id].Rotation.Qx, 3).ToString() + ", " +
@@ -80,23 +81,25 @@ namespace import_DOTBIM
 
                         // assign atributes to the meshes
                         // to use in Rhino
+                        
                         foreach (var fkey in filekeys)
                         {
                             int fid = filekeys.IndexOf(fkey);
-                            attributes.SetUserString("File Info: " + fkey, filevalues[fid]);
+                            //attributes.SetUserString("File Info: " + fkey, filevalues[fid]);
                             geo.SetUserString("File Info: " + fkey, filevalues[fid]);
                         }
 
+                        //attributes.SetUserString("Mesh ID", mmshid);
+                        //attributes.SetUserString("Rotation", mrot);
+                        //attributes.SetUserString("Vector", mvect);
+                        //attributes.SetUserString("Color", mcolor);
+
                         attributes.SetUserString("Guid", mguid);
-                        attributes.SetUserString("Mesh ID", mmshid);
-                        attributes.SetUserString("Rotation", mrot);
-                        attributes.SetUserString("Vector", mvect);
                         attributes.SetUserString("Type", mtype);
-                        attributes.SetUserString("Color", mcolor);
                         attributes.ObjectId = Guid.Parse(mguid);
                         foreach (var kvp in minfo)
                         {
-                            attributes.SetUserString("Info: " + kvp.Key, kvp.Value);
+                            attributes.SetUserString(kvp.Key, kvp.Value);
                             geo.SetUserString("Info: " + kvp.Key, kvp.Value);
                         }
 
@@ -119,9 +122,9 @@ namespace import_DOTBIM
                 RhinoApp.WriteLine("BIM file opened and visualized successfully!");
 
             }
-            catch (Exception ex)
+            catch
             {
-                RhinoApp.WriteLine($"Error opening BIM file: {ex.Message}");
+                //RhinoApp.WriteLine($"Error opening BIM file: {ex.Message}");
             }
 
             return read_success;
