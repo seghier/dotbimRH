@@ -15,4 +15,4 @@ To imprort dotbim file:
 	Rhino 7: C:\Program Files\Rhino 7\Plug-ins
 	Rhino 8: C:\Program Files\Rhino 8 WIP\Plug-ins
 
-The imported meshes in Rhino have the same original Guid
+The imported meshes in Rhino have the same original Guids
