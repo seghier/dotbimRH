@@ -47,8 +47,10 @@ namespace import_DOTBIM
                 var model = dotbim.File.Read(filename);
                 var rhinoGeometries = Tools.ConvertBimMeshesAndElementsIntoRhinoMeshes(model.Meshes, model.Elements);
                 var fileinfo = model.Info;
-                string author = fileinfo.Keys.FirstOrDefault();
-                string name = fileinfo.Values.FirstOrDefault();
+                //string author = fileinfo.Keys.FirstOrDefault();
+                //string name = fileinfo.Values.FirstOrDefault();
+                var filekeys = fileinfo.Keys.ToList();
+                var filevalues = fileinfo.Values.ToList();
 
                 foreach (var geo in rhinoGeometries)
                 {
@@ -58,32 +60,34 @@ namespace import_DOTBIM
                         var minfo = model.Elements[id].Info;
                         var attributes = new Rhino.DocObjects.ObjectAttributes();
 
+                        string mguid = model.Elements[id].Guid;
+                        string mtype = model.Elements[id].Type;
+                        string mcolor = model.Elements[id].Color.A.ToString() + "," +
+                                        model.Elements[id].Color.R.ToString() + "," +
+                                        model.Elements[id].Color.G.ToString() + "," +
+                                        model.Elements[id].Color.B.ToString();
+
+                        foreach (var fkey in filekeys)
+                        {
+                            int fid = filekeys.IndexOf(fkey);
+                            attributes.SetUserString(fkey, filevalues[fid]);
+                            geo.SetUserString(fkey, filevalues[fid]);
+                        }
+                        attributes.SetUserString("Guid", mguid);
+                        attributes.SetUserString("Type", mtype);
+                        attributes.SetUserString("Color", mcolor);
                         foreach (var kvp in minfo)
                         {
-
-                            string mguid = model.Elements[id].Guid;
-                            string mtype = model.Elements[id].Type;
-                            string mcolor = model.Elements[id].Color.A.ToString() + "," +
-                                            model.Elements[id].Color.R.ToString() + "," +
-                                            model.Elements[id].Color.G.ToString() + "," +
-                                            model.Elements[id].Color.B.ToString();
-
-                            attributes.SetUserString(author, name);
-                            attributes.SetUserString("Guid", mguid);
-                            attributes.SetUserString("Type", mtype);
-                            attributes.SetUserString("Color", mcolor);
                             attributes.SetUserString(kvp.Key, kvp.Value);
-                            attributes.SetUserString(author, name);
-
-                            geo.SetUserString(author, name);
-                            geo.SetUserString("Guid", mguid);
-                            geo.SetUserString("Type", mtype);
-                            geo.SetUserString("Color", mcolor);
                             geo.SetUserString(kvp.Key, kvp.Value);
-                            geo.SetUserString(author, name);
-                            geo.Compact();
-
                         }
+
+                        geo.SetUserString("Guid", mguid);
+                        geo.SetUserString("Type", mtype);
+                        geo.SetUserString("Color", mcolor);
+
+                        geo.Compact();
+
                         doc.Objects.Add(geo, attributes);
                     }
                 }
