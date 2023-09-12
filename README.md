@@ -9,9 +9,9 @@ To import dotbim file:
 	- File >> Import >> DotBim (*.bim)
 
 
-- Install the plugin to: 
+Install the plugin to: 
 
-	Rhino 7: C:\Program Files\Rhino 7\Plug-ins
-	Rhino 8: C:\Program Files\Rhino 8 WIP\Plug-ins
+	-Rhino 7: C:\Program Files\Rhino 7\Plug-ins
+	-Rhino 8: C:\Program Files\Rhino 8 WIP\Plug-ins
 
 The imported meshes in Rhino have the same original Guids
