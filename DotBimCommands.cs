@@ -90,6 +90,7 @@ namespace import_DOTBIM
                         attributes.SetUserString("Vector", mvect);
                         attributes.SetUserString("Type", mtype);
                         attributes.SetUserString("Color", mcolor);
+                        attributes.ObjectId = Guid.Parse(mguid);
                         foreach (var kvp in minfo)
                         {
                             attributes.SetUserString("Info: " + kvp.Key, kvp.Value);
