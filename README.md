@@ -15,3 +15,4 @@ To import dotbim file:
 	Rhino 8: C:\Program Files\Rhino 8 WIP\Plug-ins
 
 The imported meshes in Rhino have the same original Guids
+Make sure that the plugin is enabled

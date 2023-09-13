@@ -39,6 +39,10 @@ https://github.com/paireks/dotbim</Description>
       <HintPath>..\..\..\Documents\GitHub\rh-developer-samples\rhinocommon\cs\bin\dotbim.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\..\AppData\Roaming\Grasshopper\Libraries\dotbim\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Windows.Forms" />
   </ItemGroup>
   

@@ -122,9 +122,9 @@ namespace import_DOTBIM
                 RhinoApp.WriteLine("BIM file opened and visualized successfully!");
 
             }
-            catch
+            catch (Exception ex)
             {
-                //RhinoApp.WriteLine($"Error opening BIM file: {ex.Message}");
+                RhinoApp.WriteLine($"Error opening BIM file: {ex.Message}");
             }
 
             return read_success;
